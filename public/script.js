@@ -1,3 +1,15 @@
+// Pipedrive SDK Initialization
+window.addEventListener('load', function() {
+    const pipedrive = new Pipedrive.Client();
+
+    pipedrive.initialize();
+
+    pipedrive.ready(() => {
+        // SDK is ready
+        console.log('Pipedrive SDK initialized');
+    });
+});
+
 document.getElementById('send-button').addEventListener('click', sendMessage);
 document.getElementById('message-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
